@@ -42,11 +42,9 @@ namespace Cleaning_Simulation
             this.btn_set = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lb_spin = new System.Windows.Forms.Label();
             this.lb_drop = new System.Windows.Forms.Label();
-            this.lb_wafer = new System.Windows.Forms.Label();
             this.lb_time = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,6 +57,7 @@ namespace Cleaning_Simulation
             this.Wafer,
             this.progress,
             this.time});
+            this.lv_list.FullRowSelect = true;
             this.lv_list.HideSelection = false;
             this.lv_list.Location = new System.Drawing.Point(22, 78);
             this.lv_list.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -109,7 +108,7 @@ namespace Cleaning_Simulation
             this.btn_connect.Location = new System.Drawing.Point(476, 26);
             this.btn_connect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_connect.Name = "btn_connect";
-            this.btn_connect.Size = new System.Drawing.Size(66, 18);
+            this.btn_connect.Size = new System.Drawing.Size(66, 20);
             this.btn_connect.TabIndex = 3;
             this.btn_connect.Text = "설정";
             this.btn_connect.UseVisualStyleBackColor = true;
@@ -119,7 +118,7 @@ namespace Cleaning_Simulation
             this.btn_AddLine.Location = new System.Drawing.Point(22, 396);
             this.btn_AddLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddLine.Name = "btn_AddLine";
-            this.btn_AddLine.Size = new System.Drawing.Size(66, 18);
+            this.btn_AddLine.Size = new System.Drawing.Size(66, 31);
             this.btn_AddLine.TabIndex = 6;
             this.btn_AddLine.Text = "라인추가";
             this.btn_AddLine.UseVisualStyleBackColor = true;
@@ -139,7 +138,7 @@ namespace Cleaning_Simulation
             this.btn_set.Location = new System.Drawing.Point(476, 78);
             this.btn_set.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_set.Name = "btn_set";
-            this.btn_set.Size = new System.Drawing.Size(66, 18);
+            this.btn_set.Size = new System.Drawing.Size(66, 20);
             this.btn_set.TabIndex = 8;
             this.btn_set.Text = "관리";
             this.btn_set.UseVisualStyleBackColor = true;
@@ -148,7 +147,7 @@ namespace Cleaning_Simulation
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(338, 306);
+            this.label1.Location = new System.Drawing.Point(337, 319);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 12);
             this.label1.TabIndex = 10;
@@ -157,20 +156,11 @@ namespace Cleaning_Simulation
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(338, 336);
+            this.label2.Location = new System.Drawing.Point(336, 356);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 12);
             this.label2.TabIndex = 11;
             this.label2.Text = "Drop :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(341, 369);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 12);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "DIW :";
             // 
             // label4
             // 
@@ -184,7 +174,7 @@ namespace Cleaning_Simulation
             // lb_spin
             // 
             this.lb_spin.AutoSize = true;
-            this.lb_spin.Location = new System.Drawing.Point(398, 306);
+            this.lb_spin.Location = new System.Drawing.Point(397, 319);
             this.lb_spin.Name = "lb_spin";
             this.lb_spin.Size = new System.Drawing.Size(11, 12);
             this.lb_spin.TabIndex = 14;
@@ -193,20 +183,11 @@ namespace Cleaning_Simulation
             // lb_drop
             // 
             this.lb_drop.AutoSize = true;
-            this.lb_drop.Location = new System.Drawing.Point(398, 336);
+            this.lb_drop.Location = new System.Drawing.Point(396, 356);
             this.lb_drop.Name = "lb_drop";
             this.lb_drop.Size = new System.Drawing.Size(11, 12);
             this.lb_drop.TabIndex = 15;
             this.lb_drop.Text = "0";
-            // 
-            // lb_wafer
-            // 
-            this.lb_wafer.AutoSize = true;
-            this.lb_wafer.Location = new System.Drawing.Point(398, 369);
-            this.lb_wafer.Name = "lb_wafer";
-            this.lb_wafer.Size = new System.Drawing.Size(11, 12);
-            this.lb_wafer.TabIndex = 16;
-            this.lb_wafer.Text = "0";
             // 
             // lb_time
             // 
@@ -228,6 +209,7 @@ namespace Cleaning_Simulation
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(328, 120);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(214, 161);
@@ -241,11 +223,9 @@ namespace Cleaning_Simulation
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lb_time);
-            this.Controls.Add(this.lb_wafer);
             this.Controls.Add(this.lb_drop);
             this.Controls.Add(this.lb_spin);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_set);
@@ -275,11 +255,9 @@ namespace Cleaning_Simulation
         private System.Windows.Forms.Button btn_set;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lb_spin;
         private System.Windows.Forms.Label lb_drop;
-        private System.Windows.Forms.Label lb_wafer;
         private System.Windows.Forms.Label lb_time;
         private System.Windows.Forms.ColumnHeader No;
         private System.Windows.Forms.ColumnHeader Wafer;

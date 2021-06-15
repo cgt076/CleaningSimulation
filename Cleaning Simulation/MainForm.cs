@@ -24,7 +24,7 @@ namespace Cleaning_Simulation
         }
 
         int next_lineno = 1;
-        Dictionary<int, SetupForm> wdic = new Dictionary<int, SetupForm>();
+        Dictionary<int, SetForm> wdic = new Dictionary<int, SetForm>();
         private void btn_AddLine_Click(object sender, EventArgs e)
         {
             int no = next_lineno;
@@ -38,6 +38,8 @@ namespace Cleaning_Simulation
             lvi.Tag = wl;
 
             cbox_line.Items.Add(wl);
+            SetForm wlf = new SetForm(wl);
+            wdic[no] = wlf;
         }
 
         private void btn_set_Click(object sender, EventArgs e)
