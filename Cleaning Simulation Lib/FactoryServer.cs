@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Cleaning_Simulation_Lib
 {
-    public event RecvStsEndPtEventHandler RecvedStsEndPt;
+    // public event RecvStsEndPtEventHandler RecvedStsEndPt;
     public class FactoryServer
     {
         public string IP { get; }
